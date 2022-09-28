@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: rgb(231, 167, 50);
+}
+
+.container {
+  background-color: rgb(53, 53, 67);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem;
+  height: 100vh;
+}
+
+#playerText {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-family: "Permanent Marker";
+  margin-bottom: 1.5rem;
+}
+
+#gameboard {
+  display: flex;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  width: 45rem;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  font-size: 12rem;
+  border-right: 0.2rem solid;
+  border-bottom: 0.2rem solid;
+  color: rgb(231, 167, 50);
+}
+
+.box:nth-child(3n) {
+  border-right: none;
+}
+
+.box:nth-child(6) ~ .box {
+  border-bottom: none;
+}
+
+#restartGameBtn {
+  padding: 1rem 2rem;
+  background-color: rgb(231, 167, 50);
+  border-radius: 1rem;
+  color: #333;
+  font-size: 2rem;
+  border-color: rgb(231, 167, 50);
+  font-weight: 60rem;
+  transition: 500ms transform;
+  font-size: 2.5rem;
+}
+
+#restartGameBtn:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+}/*# sourceMappingURL=style.css.map */
