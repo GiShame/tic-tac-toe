@@ -1,18 +1,35 @@
 const player = document.getElementById('playerText')
 const board = document.getElementById('gameboard')
+const restartBtn = document.getElementById('restartGameBtn')
 let boxes = Array.from(document.getElementsByClassName('box'))
 
 const player1 = "X"
 const player2 = "0"
 let currentPlayer = player1
+let scores = Array(9).fill(null)
 
-boxes[0].addEventListener('click', e => console.log(e))
+// For every box(div) wich will be clicked
+const startGame = function () {
+  boxes.forEach(box => box.addEventListener('click', boxClicked))
+}
 
-Array.prototype.forEach2 = function() {
-  for(let i = 0; i < this.length; i++) {
-    
+// Wich div clicked?
+function boxClicked (div) {
+  const id = div.target.id
+  console.log(id)
+
+  if (!scores[id]) {
+  scores[id] = currentPlayer
+  console.log(scores)
+  div.target.innerText = currentPlayer
+  currentPlayer = currentPlayer == player1 ? player2 : player1
   }
 }
 
-const a = [1, 2]
-console.log(a.forEach2())
+restartBtn.addEventListener('click', restart)
+
+function restart() {
+  scores.fill(null)
+}
+
+startGame()
